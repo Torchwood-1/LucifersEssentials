@@ -1,0 +1,53 @@
+name: LucifersEssentials
+version: 1.0
+main: tk.jacobcraft.lucifersplugin.Main
+api-version: 1.16
+authors: [ Torchwood_one ]
+description: a simple helloworld plugin!
+website: com.midlandwebmasters.jacobempire.HelloWorld
+
+commands:
+  vanish:
+    permission: test.vanish
+    description: vanishes you from the world
+  feed:
+    permission: test.feed
+    permission-message: §4You are not authorised
+    aliases: [hunger,unstarve,feed]
+    description: it feeds you, pretty simple really!
+  stick:
+    aliases: [stickoftruth,painstick,lucifersfury]
+    description: this is an epic weapon for Lucifer
+  fly:
+    permission: test.fly
+    permission-message: §4you are not authorised, get recked!
+    aliases: [soar,fallwithstyle,levitate,hover]
+    description: this allows you to fly, pretty simple really
+  helloworld:
+    permission: test.helloworld
+    permission-message: §4you are not authorised, get recked!
+    aliases: [hi,hello]
+    description: This is the hello command!
+
+
+permissions:
+  test.vanish:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /vanish or aliases
+  test.feed:
+    default: op
+    description: a simple command node to allow authorised people to use the epic command /feed or aliases
+  test.fly:
+    default: op
+    description: a simple command node to allow autorised people to use the epic command /fly or aliases
+  test.helloworld:
+    default: op
+    description: a simple command node to allow people to use the epic command /helloworld or aliases
+  test.*:
+    default: op
+    children:
+      test.vanish: true
+      test.fly: true
+      test.helloworld: true
+      test.feed: true
+    description: this allows a person to use all commands
