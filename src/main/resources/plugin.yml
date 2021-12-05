@@ -40,12 +40,15 @@ commands:
       - noon
       - midnight
     usage: "/<command> [day|night|noon|midnight|ticks]"
+    permission: test.time
 
   weather:
     aliases:
       - sun
       - rain
+      - snow
     usage: "/<command> [rain|sun]"
+    permission: test.weather
 
 
 
