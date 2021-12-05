@@ -7,6 +7,10 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  gamemode:
+    permission: test.gamemode
+    description: changes your gamemode
+    aliases: [gms, gmc, gmsp, creative, gm, survival, spectator, 1, 3,0]
   vanish:
     permission: test.vanish
     description: vanishes you from the world
@@ -32,6 +36,9 @@ commands:
 
 
 permissions:
+  test.gamemode:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /gamemode or aliases
 
   test.vanish:
     default: op

@@ -21,6 +21,7 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("stick").setExecutor(new CommandStickItem());
         this.getCommand("feed").setExecutor(new CommandFeed());
         this.getCommand("vanish").setExecutor(new CommandVanish(this));
+        this.getCommand("gamemode").setExecutor(new CommandGamemode());
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 
