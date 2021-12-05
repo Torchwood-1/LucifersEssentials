@@ -5,15 +5,18 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
+import tk.jacobcraft.lucifersplugin.Main;
 import java.util.ArrayList;
 
 public class CommandVanish implements CommandExecutor {
 
     ArrayList<Player> invisible_list = new ArrayList<>();
 
-    tk.jacobcraft.lucifersplugin.Main plugin;
-    
+    Main plugin;
+
+    public CommandVanish (Main plugin){
+        this.plugin = plugin;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args){

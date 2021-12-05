@@ -2,7 +2,7 @@ name: LucifersEssentials
 version: 1.0
 main: tk.jacobcraft.lucifersplugin.Main
 api-version: 1.16
-authors: [ Torchwood_one ]
+authors: [ Torchwood1#4320, SamTiz#0913 ]
 description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
@@ -10,6 +10,7 @@ commands:
   vanish:
     permission: test.vanish
     description: vanishes you from the world
+    aliases: [v]
   feed:
     permission: test.feed
     permission-message: §4You are not authorised
