@@ -1,10 +1,17 @@
 package tk.jacobcraft.lucifersplugin;
 
+import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
+import tk.jacobcraft.lucifersplugin.events.EventJoin;
 import tk.jacobcraft.lucifersplugin.items.ItemManager;
 
-public class Main extends JavaPlugin {
+public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
@@ -13,10 +20,12 @@ public class Main extends JavaPlugin {
         this.getCommand("fly").setExecutor(new CommandFly());
         this.getCommand("stick").setExecutor(new CommandStickItem());
         this.getCommand("feed").setExecutor(new CommandFeed());
-        this.getCommand("vanish").setExecutor(new CommandVanish());
+        this.getCommand("vanish").setExecutor(new CommandVanish(this));
 
+        Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 
         ItemManager.init();
 
     }
+
 }

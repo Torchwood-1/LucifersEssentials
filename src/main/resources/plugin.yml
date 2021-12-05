@@ -32,22 +32,36 @@ commands:
 
 
 permissions:
+
   test.vanish:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /vanish or aliases
+  test.vanish.others:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /vanish or aliases on others
+  test.vanish.*:
+    children:
+      test.vanish: true
+      test.vanish.others: true
+    description: a simple command node to allow authorised peoople to use the epic command /vanish or aliases to it's full extent
+    default: op
+
   test.feed:
     default: op
     description: a simple command node to allow authorised people to use the epic command /feed or aliases
+
   test.fly:
     default: op
     description: a simple command node to allow autorised people to use the epic command /fly or aliases
+
   test.helloworld:
     default: op
     description: a simple command node to allow people to use the epic command /helloworld or aliases
+
   test.*:
     default: op
     children:
-      test.vanish: true
+      test.vanish.*: true
       test.fly: true
       test.helloworld: true
       test.feed: true
