@@ -17,7 +17,7 @@ public class CommandFly implements CommandExecutor {
                 Player player = (Player) sender;
                 Boolean allow = !player.getAllowFlight();
                 player.setAllowFlight(allow);
-                sender.sendMessage(allow? "§ayou are flying!":"§ayou are no longer fling!");
+                sender.sendMessage(allow? "§ayou are flying!":"§ayou are no longer flying!");
             }else{
                 sender.sendMessage("§4you are not authorised, get recked!");
                 return false;
