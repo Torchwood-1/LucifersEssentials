@@ -33,6 +33,20 @@ commands:
     permission-message: §4you are not authorised, get recked!
     aliases: [hi,hello]
     description: This is the hello command!
+  time:
+    aliases:
+      - day
+      - night
+      - noon
+      - midnight
+    usage: "/<command> [day|night|noon|midnight|ticks]"
+
+  weather:
+    aliases:
+      - sun
+      - rain
+    usage: "/<command> [rain|sun]"
+
 
 
 permissions:
@@ -65,6 +79,22 @@ permissions:
     default: op
     description: a simple command node to allow people to use the epic command /helloworld or aliases
 
+  test.time:
+    default: true
+    description: "Allows you to use /time"
+  test.time.set:
+    default: false
+    description: "Allows you to use /time set"
+    children: [ esz.time ]
+
+  test.weather:
+    default: true
+    description: "Allows you to use /weather"
+  test.weather.set:
+    default: op
+    description: "Allows you to use /weather set"
+    children: [ esz.weather ]
+
   test.*:
     default: op
     children:
@@ -72,4 +102,6 @@ permissions:
       test.fly: true
       test.helloworld: true
       test.feed: true
+      test.weather.set: true
+      test.time.set: true
     description: this allows a person to use all commands

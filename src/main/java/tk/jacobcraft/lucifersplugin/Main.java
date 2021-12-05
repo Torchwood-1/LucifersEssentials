@@ -22,10 +22,19 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("feed").setExecutor(new CommandFeed());
         this.getCommand("vanish").setExecutor(new CommandVanish(this));
         this.getCommand("gamemode").setExecutor(new CommandGamemode());
+        CommandTime commandTime = new CommandTime();
+        this.getCommand("time").setExecutor(commandTime);
+        this.getCommand("time").setTabCompleter(commandTime);
+
+        CommandWeather commandWeather = new CommandWeather();
+        this.getCommand("weather").setExecutor(commandWeather);
+        this.getCommand("weather").setTabCompleter(commandWeather);
+
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 
         ItemManager.init();
+
 
     }
 
