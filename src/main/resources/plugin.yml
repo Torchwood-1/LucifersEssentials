@@ -82,18 +82,20 @@ permissions:
   test.time:
     default: true
     description: "Allows you to use /time"
+
   test.time.set:
     default: false
     description: "Allows you to use /time set"
-    children: [ esz.time ]
+    children: [ test.time ]
 
   test.weather:
     default: true
     description: "Allows you to use /weather"
+
   test.weather.set:
     default: op
     description: "Allows you to use /weather set"
-    children: [ esz.weather ]
+    children: [ test.weather ]
 
   test.*:
     default: op
