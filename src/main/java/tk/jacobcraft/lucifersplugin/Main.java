@@ -30,6 +30,9 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("weather").setExecutor(commandWeather);
         this.getCommand("weather").setTabCompleter(commandWeather);
 
+        this.getCommand("tp").setExecutor(new teleport());
+        this.getCommand("tpall").setExecutor(new teleportAll());
+
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 
