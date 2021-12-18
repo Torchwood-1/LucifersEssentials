@@ -64,6 +64,32 @@ commands:
     usage: "/<command> [rain|sun]"
     permission: test.weather
 
+  echest:
+    aliases:
+      - endersee
+      - ec
+      - envsee
+      - endermanbox
+      - enderchest
+    permission: test.echest
+    usage: "/<command> [player]"
+
+  invsee:
+    aliases:
+      - openinv
+      - seeinv
+      - armorsee
+    permission: test.invsee
+    usage: "/<command> [player]"
+
+  world:
+    permission: test.world
+    description: allows you to change world!
+
+  hacks:
+   permission: test.hacks
+   description: built in hacks for players to use :)
+
 
 
 permissions:
@@ -122,6 +148,45 @@ permissions:
     default: op
     description: "Allows you to use /tp"
 
+  test.echest:
+  default: true
+  description: "Allows you to use /echest"
+
+  test.echest.others:
+    default: op
+    description: "Allows you to see other people's enderchests"
+
+  test.echest.*:
+    children:
+      - test.echest
+      - test.echest.others
+
+  test.invsee:
+    default: true
+    description: "Allows you to use /invsee"
+
+  test.invsee.others:
+    default: op
+    description: "Allows you to see other people's inventories"
+
+  test.invsee.armor:
+    default: op
+    description: "Allows you to use /armorsee"
+
+  test.invsee.*:
+    children:
+      - test.invsee
+      - test.invsee.others
+      - test.invsee.armor
+
+  test.world:
+    default: op
+    description: "Allows you to use /world"
+
+  test.hacks:
+    default: op
+    description: "Allows you to use /hacks"
+
   test.*:
     default: op
     children:
@@ -133,4 +198,7 @@ permissions:
       test.feed: true
       test.weather.set: true
       test.time.set: true
+      test.invsee.*: true
+      test.echest.*: true
+      test.hacks: true
     description: this allows a person to use all commands

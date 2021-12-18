@@ -33,6 +33,16 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("tp").setExecutor(new teleport());
         this.getCommand("tpall").setExecutor(new teleportAll());
 
+        this.getCommand("echest").setExecutor(new CommandEchest());
+        this.getCommand("invsee").setExecutor(new CommandInvsee());
+
+        CommandWorld commandWorld = new CommandWorld();
+        this.getCommand("world").setExecutor(commandWorld);
+        this.getCommand("world").setTabCompleter(commandWorld);
+
+        CommandHacks commandHacks = new CommandHacks();
+        this.getCommand("hacks").setExecutor(commandHacks);
+        this.getCommand("hacks").setExecutor(commandHacks);
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 
