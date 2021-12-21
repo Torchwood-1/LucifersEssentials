@@ -1,11 +1,7 @@
 package tk.jacobcraft.lucifersplugin;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.jacobcraft.lucifersplugin.events.EventJoin;
@@ -13,9 +9,16 @@ import tk.jacobcraft.lucifersplugin.items.ItemManager;
 
 public class Main extends JavaPlugin implements Listener {
 
+    FileHandler FileHandler = new FileHandler();
+    tk.jacobcraft.lucifersplugin.PlayerHandler PlayerHandler = new PlayerHandler();
+    Events Events = new Events(PlayerHandler);
+
     @Override
     public void onEnable() {
         // Plugin startup logic
+        getServer().getPluginManager().registerEvents(Events, this);
+        FileHandler.Setup();
+
         this.getCommand("helloworld").setExecutor(new CommandHelloworld());
         this.getCommand("fly").setExecutor(new CommandFly());
         this.getCommand("stick").setExecutor(new CommandStickItem());
@@ -42,7 +45,11 @@ public class Main extends JavaPlugin implements Listener {
 
         CommandHacks commandHacks = new CommandHacks();
         this.getCommand("hacks").setExecutor(commandHacks);
-        this.getCommand("hacks").setExecutor(commandHacks);
+        this.getCommand("hacks").setTabCompleter(commandHacks);
+
+        CommandRank commandRank = new CommandRank();
+        this.getCommand("rank").setExecutor(commandRank);
+
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 

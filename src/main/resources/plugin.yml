@@ -7,6 +7,10 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  rank:
+    description: allows a staff member to set a players rank
+    permission: test.rank
+
   tpall:
     description: Teleports all the players to your location
     permission: test.tpall
@@ -87,12 +91,20 @@ commands:
     description: allows you to change world!
 
   hacks:
-   permission: test.hacks
-   description: built in hacks for players to use :)
+    permission: test.hacks
+    description: built in hacks for players to use :)
 
 
 
 permissions:
+  test.rank.override:
+    default: op
+    description: this command node allows the authorised people to change anyone's rank
+
+  test.rank:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /rank
+
   test.gamemode:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /gamemode or aliases
@@ -190,6 +202,8 @@ permissions:
   test.*:
     default: op
     children:
+      test.rank.override: true
+      test.rank: true
       test.tp: true
       test.tpall: true
       test.vanish.*: true
