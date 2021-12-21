@@ -50,6 +50,9 @@ public class Main extends JavaPlugin implements Listener {
         CommandRank commandRank = new CommandRank();
         this.getCommand("rank").setExecutor(commandRank);
 
+        CommandHeal commandHeal = new CommandHeal();
+        this.getCommand("heal").setExecutor(new CommandHeal());
+
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
 

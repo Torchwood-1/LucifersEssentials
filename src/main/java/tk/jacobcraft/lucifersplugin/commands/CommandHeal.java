@@ -5,7 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandFeed implements CommandExecutor {
+public class CommandHeal implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player target;
@@ -23,8 +23,8 @@ public class CommandFeed implements CommandExecutor {
             sender.sendMessage("§4Player not found");
             return false;
         }
-        target.setFoodLevel(20);
-        sender.sendMessage("§aYour appetite has been satisfied");
+        target.setHealth(20);
+        sender.sendMessage("§aYou have been healed successfully!");
         return false;
     }
 }

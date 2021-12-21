@@ -29,6 +29,10 @@ commands:
     description: vanishes you from the world
     aliases: [v]
 
+  heal:
+    permission: test.heal
+    description: Heals people with permission
+
   feed:
     permission: test.feed
     permission-message: §4You are not authorised
@@ -122,6 +126,10 @@ permissions:
     description: a simple command node to allow authorised peoople to use the epic command /vanish or aliases to it's full extent
     default: op
 
+  test.heal:
+    default: op
+    description: a simple command node to allow authorised people to use the epic command /heal
+
   test.feed:
     default: op
     description: a simple command node to allow authorised people to use the epic command /feed or aliases
@@ -210,6 +218,7 @@ permissions:
       test.fly: true
       test.helloworld: true
       test.feed: true
+      test.heal: true
       test.weather.set: true
       test.time.set: true
       test.invsee.*: true
