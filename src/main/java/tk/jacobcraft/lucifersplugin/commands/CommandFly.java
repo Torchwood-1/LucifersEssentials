@@ -13,7 +13,7 @@ public class CommandFly implements CommandExecutor {
                 sender.sendMessage("§4you are not a player, get recked!");
                 return false;
             }
-            if(sender.hasPermission("test.fly")){
+            if(sender.hasPermission("luciferessentials.fly")){
                 Player player = (Player) sender;
                 Boolean allow = !player.getAllowFlight();
                 player.setAllowFlight(allow);

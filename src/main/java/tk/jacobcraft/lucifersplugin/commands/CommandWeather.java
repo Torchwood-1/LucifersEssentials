@@ -13,7 +13,7 @@ import java.util.List;
 public class CommandWeather implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        final boolean canSetWeather = sender.hasPermission("test.weather.set");
+        final boolean canSetWeather = sender.hasPermission("luciferessentials.weather.set");
         Boolean weatherToSet = null;
 
         if (!(sender instanceof Player)) {

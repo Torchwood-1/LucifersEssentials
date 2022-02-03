@@ -16,7 +16,7 @@ public class CommandInvsee implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player;
 
-        if (sender.hasPermission("test.invsee.others") && args.length > 0) {
+        if (sender.hasPermission("luciferessentials.invsee.others") && args.length > 0) {
             player = sender.getServer().getPlayer(args[0]);
         } else {
             if (!(sender instanceof Player)) {
@@ -39,7 +39,7 @@ public class CommandInvsee implements CommandExecutor {
             if (label.equalsIgnoreCase("armorsee")) {
                 // todo: make armorsee actually modify the person's inventory
 
-                if(!sender.hasPermission("test.invsee.armor")){
+                if(!sender.hasPermission("luciferessentials.invsee.armor")){
                     sender.sendMessage("\u00a7cYou don't have permission to use armorsee");
                     return true;
                 }

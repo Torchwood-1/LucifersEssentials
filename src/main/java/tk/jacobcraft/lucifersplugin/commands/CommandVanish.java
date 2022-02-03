@@ -24,7 +24,7 @@ public class CommandVanish implements CommandExecutor {
         Player player = null;
 
         if(args.length > 0){
-            if(!sender.hasPermission("test.vanish.others")){
+            if(!sender.hasPermission("luciferessentials.vanish.others")){
                 sender.sendMessage("You are not authorised");
                 return false;
             }

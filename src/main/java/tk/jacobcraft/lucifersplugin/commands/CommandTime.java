@@ -13,7 +13,7 @@ import java.util.List;
 public class CommandTime implements CommandExecutor, TabCompleter {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        final boolean canSetTime = sender.hasPermission("test.time.set");
+        final boolean canSetTime = sender.hasPermission("luciferessentials.time.set");
         int timeToSet;
 
         if (!(sender instanceof Player)) {

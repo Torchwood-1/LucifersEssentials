@@ -20,21 +20,21 @@ commands:
     permission: test.tp
 
   gamemode:
-    permission: test.gamemode
+    permission: luciferessentials.gamemode
     description: changes your gamemode
     aliases: [gms, gmc, gmsp, creative, gm, survival, spectator, 1, 3,0]
 
   vanish:
-    permission: test.vanish
+    permission: luciferessentials.vanish
     description: vanishes you from the world
     aliases: [v]
 
   heal:
-    permission: test.heal
+    permission: luciferessentials.heal
     description: Heals people with permission
 
   feed:
-    permission: test.feed
+    permission: luciferessentials.feed
     permission-message: §4You are not authorised
     aliases: [hunger,unstarve,feed]
     description: it feeds you, pretty simple really!
@@ -44,13 +44,13 @@ commands:
     description: this is an epic weapon for Lucifer
 
   fly:
-    permission: test.fly
+    permission: luciferessentials.fly
     permission-message: §4you are not authorised, get recked!
     aliases: [soar,fallwithstyle,levitate,hover]
     description: this allows you to fly, pretty simple really
 
   helloworld:
-    permission: test.helloworld
+    permission: luciferessentials.helloworld
     permission-message: §4you are not authorised, get recked!
     aliases: [hi,hello]
     description: This is the hello command!
@@ -62,7 +62,8 @@ commands:
       - noon
       - midnight
     usage: "/<command> [day|night|noon|midnight|ticks]"
-    permission: test.time
+    permission: luciferessentials.time
+    description: allows you to change the time
 
   weather:
     aliases:
@@ -70,7 +71,8 @@ commands:
       - rain
       - snow
     usage: "/<command> [rain|sun]"
-    permission: test.weather
+    permission: luciferessentials.weather
+    description: allows you to change the weather
 
   echest:
     aliases:
@@ -79,127 +81,130 @@ commands:
       - envsee
       - endermanbox
       - enderchest
-    permission: test.echest
+    permission: luciferessentials.echest
     usage: "/<command> [player]"
+    description: allows you to look in enderchests
 
   invsee:
     aliases:
       - openinv
       - seeinv
       - armorsee
-    permission: test.invsee
+    permission: luciferessentials.invsee
     usage: "/<command> [player]"
+    description: allows you to look in people's inventoryies
 
   world:
-    permission: test.world
+    permission: luciferessentials.world
     description: allows you to change world!
 
   hacks:
-    permission: test.hacks
+    permission: luciferessentials.hacks
     description: built in hacks for players to use :)
 
 
 
 permissions:
-  test.rank.override:
+  luciferessentials.rank.override:
     default: op
     description: this command node allows the authorised people to change anyone's rank
 
-  test.rank:
+  luciferessentials.rank:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /rank
 
-  test.gamemode:
+  luciferessentials.gamemode:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /gamemode or aliases
 
-  test.vanish:
+  luciferessentials.vanish:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /vanish or aliases
-  test.vanish.others:
+  luciferessentials.vanish.others:
     default: op
     description: a simple command node to allow the authorised people to use the epic command /vanish or aliases on others
-  test.vanish.*:
+  luciferessentials.vanish.*:
     children:
       test.vanish: true
       test.vanish.others: true
     description: a simple command node to allow authorised peoople to use the epic command /vanish or aliases to it's full extent
     default: op
 
-  test.heal:
+  luciferessentials.heal:
     default: op
     description: a simple command node to allow authorised people to use the epic command /heal
 
-  test.feed:
+  luciferessentials.feed:
     default: op
     description: a simple command node to allow authorised people to use the epic command /feed or aliases
 
-  test.fly:
+  luciferessentials.fly:
     default: op
     description: a simple command node to allow autorised people to use the epic command /fly or aliases
 
-  test.helloworld:
+  luciferessentials.helloworld:
     default: op
     description: a simple command node to allow people to use the epic command /helloworld or aliases
 
-  test.time:
+  luciferessentials.time:
     default: true
     description: "Allows you to use /time"
 
-  test.time.set:
+  luciferessentials.time.set:
     default: false
     description: "Allows you to use /time set"
     children: [ test.time ]
 
-  test.weather:
+  luciferessentials.weather:
     default: true
     description: "Allows you to use /weather"
 
-  test.weather.set:
+  luciferessentials.weather.set:
     default: op
     description: "Allows you to use /weather set"
     children: [ test.weather ]
 
-  test.tpall:
+  luciferessentials.tpall:
     default: op
     description: "Allows you to use /tp all players"
 
-  test.tp:
+  luciferessentials.tp:
     default: op
     description: "Allows you to use /tp"
 
-  test.echest:
+  luciferessentials.echest:
   default: true
   description: "Allows you to use /echest"
 
-  test.echest.others:
+  luciferessentials.echest.others:
     default: op
     description: "Allows you to see other people's enderchests"
 
-  test.echest.*:
+  luciferessentials.echest.*:
     children:
       - test.echest
       - test.echest.others
 
-  test.invsee:
+  luciferessentials.invsee:
     default: true
     description: "Allows you to use /invsee"
 
-  test.invsee.others:
+  luciferessentials.invsee.others:
     default: op
     description: "Allows you to see other people's inventories"
 
-  test.invsee.armor:
+  luciferessentials.invsee.armor:
     default: op
     description: "Allows you to use /armorsee"
 
-  test.invsee.*:
+  luciferessentials.invsee.*:
+    description: allows you to look in other people's inventoryies
     children:
-      - test.invsee
-      - test.invsee.others
-      - test.invsee.armor
+    - test.invsee
+    - test.invsee.others
+    - test.invsee.armor
 
-  test.world:
+  luciferessentials.world:
     default: op
     description: "Allows you to use /world"
 
@@ -207,21 +212,21 @@ permissions:
     default: op
     description: "Allows you to use /hacks"
 
-  test.*:
+  luciferessentials.*:
     default: op
     children:
-      test.rank.override: true
-      test.rank: true
-      test.tp: true
-      test.tpall: true
-      test.vanish.*: true
-      test.fly: true
-      test.helloworld: true
-      test.feed: true
-      test.heal: true
-      test.weather.set: true
-      test.time.set: true
-      test.invsee.*: true
-      test.echest.*: true
-      test.hacks: true
+      luciferessentials.rank.override: true
+      luciferessentials.rank: true
+      luciferessentials.tp: true
+      luciferessentials.tpall: true
+      luciferessentials.vanish.*: true
+      luciferessentials.fly: true
+      luciferessentials.helloworld: true
+      luciferessentials.feed: true
+      luciferessentials.heal: true
+      luciferessentials.weather.set: true
+      luciferessentials.time.set: true
+      luciferessentials.invsee.*: true
+      luciferessentials.echest.*: true
+      luciferessentials.hacks: true
     description: this allows a person to use all commands

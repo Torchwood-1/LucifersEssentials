@@ -12,7 +12,7 @@ public class CommandEchest implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player;
 
-        if (sender.hasPermission("test.echest.others") && args.length > 0) {
+        if (sender.hasPermission("luciferessentials.echest.others") && args.length > 0) {
             player = sender.getServer().getPlayer(args[0]);
         } else {
             if (!(sender instanceof Player)) {

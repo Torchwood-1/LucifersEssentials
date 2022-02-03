@@ -9,7 +9,7 @@ public class CommandHelloworld implements CommandExecutor {
     @Override
     public boolean onCommand (CommandSender sender, Command command, String label, String[] args){
         if(command.getName().equals("helloworld")){
-            if(sender.hasPermission("test.helloworld")){
+            if(sender.hasPermission("luciferessentials.helloworld")){
                 sender.sendMessage("hello world!");
             }else{
                 sender.sendMessage("§4you are not authorised, get recked!");

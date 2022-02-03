@@ -5,13 +5,14 @@ import org.bukkit.event.Listener;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.jacobcraft.lucifersplugin.events.EventJoin;
+import tk.jacobcraft.lucifersplugin.events.Events;
 import tk.jacobcraft.lucifersplugin.items.ItemManager;
 
 public class Main extends JavaPlugin implements Listener {
 
     FileHandler FileHandler = new FileHandler();
     tk.jacobcraft.lucifersplugin.PlayerHandler PlayerHandler = new PlayerHandler();
-    Events Events = new Events(PlayerHandler);
+    tk.jacobcraft.lucifersplugin.events.Events Events = new Events(PlayerHandler);
 
     @Override
     public void onEnable() {
