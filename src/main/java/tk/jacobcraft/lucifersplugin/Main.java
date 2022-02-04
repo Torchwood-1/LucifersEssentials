@@ -11,8 +11,8 @@ import tk.jacobcraft.lucifersplugin.items.ItemManager;
 public class Main extends JavaPlugin implements Listener {
 
     FileHandler FileHandler = new FileHandler();
-    tk.jacobcraft.lucifersplugin.PlayerHandler PlayerHandler = new PlayerHandler();
-    tk.jacobcraft.lucifersplugin.events.Events Events = new Events(PlayerHandler);
+    PlayerHandler PlayerHandler = new PlayerHandler();
+    Events Events = new Events(PlayerHandler);
 
     @Override
     public void onEnable() {
@@ -53,6 +53,7 @@ public class Main extends JavaPlugin implements Listener {
 
         CommandHeal commandHeal = new CommandHeal();
         this.getCommand("heal").setExecutor(new CommandHeal());
+
 
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);

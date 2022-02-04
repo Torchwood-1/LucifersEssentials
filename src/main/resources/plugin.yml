@@ -8,50 +8,57 @@ website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
   rank:
+    permission: luciferessentials.rank
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: allows a staff member to set a players rank
-    permission: test.rank
 
   tpall:
+    permission: luciferessentials.tpall
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: Teleports all the players to your location
-    permission: test.tpall
 
   tp:
+    permission: luciferessentials.tp
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: Telleports players
-    permission: test.tp
 
   gamemode:
     permission: luciferessentials.gamemode
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: changes your gamemode
     aliases: [gms, gmc, gmsp, creative, gm, survival, spectator, 1, 3,0]
 
   vanish:
     permission: luciferessentials.vanish
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: vanishes you from the world
     aliases: [v]
 
   heal:
     permission: luciferessentials.heal
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: Heals people with permission
 
   feed:
     permission: luciferessentials.feed
-    permission-message: §4You are not authorised
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     aliases: [hunger,unstarve,feed]
     description: it feeds you, pretty simple really!
 
   stick:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     aliases: [stickoftruth,painstick,lucifersfury]
     description: this is an epic weapon for Lucifer
 
   fly:
     permission: luciferessentials.fly
-    permission-message: §4you are not authorised, get recked!
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     aliases: [soar,fallwithstyle,levitate,hover]
     description: this allows you to fly, pretty simple really
 
   helloworld:
     permission: luciferessentials.helloworld
-    permission-message: §4you are not authorised, get recked!
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     aliases: [hi,hello]
     description: This is the hello command!
 
@@ -63,6 +70,7 @@ commands:
       - midnight
     usage: "/<command> [day|night|noon|midnight|ticks]"
     permission: luciferessentials.time
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: allows you to change the time
 
   weather:
@@ -72,6 +80,7 @@ commands:
       - snow
     usage: "/<command> [rain|sun]"
     permission: luciferessentials.weather
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: allows you to change the weather
 
   echest:
@@ -82,6 +91,7 @@ commands:
       - endermanbox
       - enderchest
     permission: luciferessentials.echest
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     usage: "/<command> [player]"
     description: allows you to look in enderchests
 
@@ -91,15 +101,18 @@ commands:
       - seeinv
       - armorsee
     permission: luciferessentials.invsee
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     usage: "/<command> [player]"
     description: allows you to look in people's inventoryies
 
   world:
     permission: luciferessentials.world
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: allows you to change world!
 
   hacks:
     permission: luciferessentials.hacks
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: built in hacks for players to use :)
 
 
@@ -162,7 +175,7 @@ permissions:
   luciferessentials.weather.set:
     default: op
     description: "Allows you to use /weather set"
-    children: [ test.weather ]
+    children: [ luciferessentials.weather ]
 
   luciferessentials.tpall:
     default: op
@@ -182,8 +195,8 @@ permissions:
 
   luciferessentials.echest.*:
     children:
-      - test.echest
-      - test.echest.others
+      - luciferessentials.echest
+      - luciferessentials.echest.others
 
   luciferessentials.invsee:
     default: true
@@ -200,9 +213,9 @@ permissions:
   luciferessentials.invsee.*:
     description: allows you to look in other people's inventoryies
     children:
-    - test.invsee
-    - test.invsee.others
-    - test.invsee.armor
+    - luciferessentials.invsee
+    - luciferessentials.invsee.others
+    - luciferessentials.invsee.armor
 
   luciferessentials.world:
     default: op
