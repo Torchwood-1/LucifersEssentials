@@ -16,7 +16,7 @@ public class PlayerHandler {
     final static int DEV = 32000;
     final static int ULTRAADMIN = 31500;
     final static int ADMIN = 31000;
-    final static int MODERATOR = 30000;
+    final static int MOD = 30000;
     final static int BUILDER = 29000;
     final static int BAE = 20000;
     final static int ELITE = 2500;
@@ -80,7 +80,7 @@ public class PlayerHandler {
             case ADMIN:
                 return ChatColor.RED.toString() + ChatColor.BOLD + "Admin " + ChatColor.WHITE.toString();
 
-            case MODERATOR:
+            case MOD:
                 return ChatColor.DARK_GREEN.toString() + ChatColor.BOLD + "Mod " + ChatColor.WHITE.toString();
 
             case BUILDER:
@@ -122,7 +122,7 @@ public class PlayerHandler {
             case "admin":
                 return ADMIN;
             case "moderator":
-                return MODERATOR;
+                return MOD;
             case "builder":
                 return BUILDER;
             case "bae":

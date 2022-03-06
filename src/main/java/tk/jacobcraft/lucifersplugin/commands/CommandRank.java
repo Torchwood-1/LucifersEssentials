@@ -20,17 +20,17 @@ public class CommandRank implements CommandExecutor {
                 if (rankValue >= 0) {
                     if (PlayerHandler.setRank(target, rankValue)) {
                         sender.sendMessage("§aSuccesssfully set " + target.getName() + "'s rank to " + rankName);
-                        target.sendMessage("§4Your rank has been changed to " + rankName);
+                        target.sendMessage("§1[§4lucifers§1] §bYour rank has been changed to " + rankName);
                         PlayerHandler.refreshRanks();
                     }
                 } else {
-                    sender.sendMessage("§4Error: " + rankName + " is not a rank!");
+                    sender.sendMessage("§1[§4lucifers§1] §bError: §6§o" + rankName + " §bis not a rank!");
                 }
             } else {
-                sender.sendMessage("§4Error: " + targetName + " is not online!");
+                sender.sendMessage("§1[§4lucifers§1] §bError: §6" + targetName + " §bis not online!");
             }
         } else {
-            sender.sendMessage("§6Ussage: /rank <player> <rank>");
+            sender.sendMessage("§1[§4lucifers§1] §bUssage: /rank <player> <rank>");
         }
         return false;
     }

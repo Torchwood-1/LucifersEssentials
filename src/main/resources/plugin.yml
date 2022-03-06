@@ -7,9 +7,22 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  glow:
+    permission: luciferessentials.glow
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows player's to glow
+
+  skull:
+    permission: luciferessentials.skull
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows you to get a player's head
+
+  color:
+    description: color!
+
   rank:
     permission: luciferessentials.rank
-    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission-message:
     description: allows a staff member to set a players rank
 
   tpall:
@@ -118,6 +131,10 @@ commands:
 
 
 permissions:
+  luciferessentials.coloredchat:
+    default: op
+    description: this allows players to speak with chat
+
   luciferessentials.rank.override:
     default: op
     description: this command node allows the authorised people to change anyone's rank
@@ -242,4 +259,5 @@ permissions:
       luciferessentials.invsee.*: true
       luciferessentials.echest.*: true
       luciferessentials.hacks: true
+      luciferessentials.coloredchat: true
     description: this allows a person to use all commands

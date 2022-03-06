@@ -4,28 +4,37 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
-import tk.jacobcraft.lucifersplugin.events.EventJoin;
-import tk.jacobcraft.lucifersplugin.events.Events;
+import tk.jacobcraft.lucifersplugin.events.*;
 import tk.jacobcraft.lucifersplugin.items.ItemManager;
+
+
 
 public class Main extends JavaPlugin implements Listener {
 
+
     FileHandler FileHandler = new FileHandler();
     PlayerHandler PlayerHandler = new PlayerHandler();
-    Events Events = new Events(PlayerHandler);
+    Events events = new Events(PlayerHandler);
 
     @Override
     public void onEnable() {
+
         // Plugin startup logic
-        getServer().getPluginManager().registerEvents(Events, this);
+        getServer().getPluginManager().registerEvents(events, this);
         FileHandler.Setup();
 
         this.getCommand("helloworld").setExecutor(new CommandHelloworld());
+
         this.getCommand("fly").setExecutor(new CommandFly());
+
         this.getCommand("stick").setExecutor(new CommandStickItem());
+
         this.getCommand("feed").setExecutor(new CommandFeed());
+
         this.getCommand("vanish").setExecutor(new CommandVanish(this));
+
         this.getCommand("gamemode").setExecutor(new CommandGamemode());
+
         CommandTime commandTime = new CommandTime();
         this.getCommand("time").setExecutor(commandTime);
         this.getCommand("time").setTabCompleter(commandTime);
@@ -54,11 +63,18 @@ public class Main extends JavaPlugin implements Listener {
         CommandHeal commandHeal = new CommandHeal();
         this.getCommand("heal").setExecutor(new CommandHeal());
 
+        getCommand("color").setExecutor(new CommandColour());
 
+        CommandSkull commandSkull = new CommandSkull();
+        this.getCommand("skull").setExecutor(new CommandSkull());
+
+        getCommand("glow").setExecutor(new CommandGlow());
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
+        Bukkit.getServer().getPluginManager().registerEvents(new EventPlayerChat(), this);
 
         ItemManager.init();
+
 
 
     }

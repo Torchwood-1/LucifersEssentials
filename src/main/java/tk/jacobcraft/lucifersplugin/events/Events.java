@@ -28,14 +28,6 @@ public class Events implements Listener {
         PlayerHandler.refreshRanks();
     }
 
-    @EventHandler
-    public void onPlayerChat(AsyncPlayerChatEvent e) {
-        e.setCancelled(true);
-        Player p = e.getPlayer();
-        String name = p.getName();
-        String prefix = PlayerHandler.getRankPrefix(PlayerHandler.getRank(p));
-        String message = e.getMessage();
-        Bukkit.broadcastMessage(prefix + name + ": " + message);
-    }
+
 }
 
