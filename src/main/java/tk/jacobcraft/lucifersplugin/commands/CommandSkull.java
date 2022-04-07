@@ -1,9 +1,6 @@
 package tk.jacobcraft.lucifersplugin.commands;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.SkullType;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -25,9 +22,11 @@ public class CommandSkull implements CommandExecutor {
 
         Player player = (Player) sender;
 
+        OfflinePlayer ownerPlayer = Bukkit.getOfflinePlayer(args[0]);
+
         SkullMeta meta = (SkullMeta) skull.getItemMeta();
-        meta.setOwningPlayer(Bukkit.getOfflinePlayer(args[0]));
-        meta.setDisplayName(ChatColor.GREEN + (player).getName() + "'s Head!");
+        meta.setOwningPlayer(ownerPlayer);
+        meta.setDisplayName(ChatColor.GREEN + (ownerPlayer).getName() + "'s Head!");
         skull.setItemMeta(meta);
 
         (player).getInventory().addItem(skull);

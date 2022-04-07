@@ -18,6 +18,13 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+        //config.yml
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
+
+
+
+        getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
 
         // Plugin startup logic
         getServer().getPluginManager().registerEvents(events, this);
@@ -69,6 +76,10 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("skull").setExecutor(new CommandSkull());
 
         getCommand("glow").setExecutor(new CommandGlow());
+
+        getCommand("setspawn").setExecutor(new CommandSetSpawn(this));
+
+        getCommand("spawn").setExecutor(new CommandSpawn(this));
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new EventPlayerChat(), this);

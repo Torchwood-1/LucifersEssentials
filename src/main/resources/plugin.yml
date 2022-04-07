@@ -7,6 +7,14 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  spawn:
+    permission: luciferessentials.spawn
+    description: send a player to spawn
+
+  setspawn:
+    description: sets the server spawn point
+    permission: luciferessentials.setspawn
+
   glow:
     permission: luciferessentials.glow
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
@@ -131,9 +139,26 @@ commands:
 
 
 permissions:
+
+
+  luciferessentials.spawn:
+    default: true
+    description: this allows a player to go to spawn
+  luciferessentials.setspawn:
+    default: op
+    description: this allows a admin to set spawn
+
+  luciferessentials.glow:
+    default: op
+    description: this allows the player to glow
+
+  luciferessentials.skull:
+    default: op
+    description: this allows players to get player heads
+
   luciferessentials.coloredchat:
     default: op
-    description: this allows players to speak with chat
+    description: this allows players to speak with coloured chat
 
   luciferessentials.rank.override:
     default: op
@@ -216,7 +241,7 @@ permissions:
       - luciferessentials.echest.others
 
   luciferessentials.invsee:
-    default: true
+    default: op
     description: "Allows you to use /invsee"
 
   luciferessentials.invsee.others:
@@ -245,6 +270,9 @@ permissions:
   luciferessentials.*:
     default: op
     children:
+      luciferessentials.gamemode: true
+      luciferessentials.spawn: true
+      luciferessentials.setspawn: true
       luciferessentials.rank.override: true
       luciferessentials.rank: true
       luciferessentials.tp: true
