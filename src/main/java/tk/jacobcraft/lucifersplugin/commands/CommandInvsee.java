@@ -40,7 +40,7 @@ public class CommandInvsee implements CommandExecutor {
                 // todo: make armorsee actually modify the person's inventory
 
                 if(!sender.hasPermission("luciferessentials.invsee.armor")){
-                    sender.sendMessage("\u00a7cYou don't have permission to use armorsee");
+                    sender.sendMessage("§1[§4lucifers§1] \u00a7cYou don't have permission to use armorsee");
                     return true;
                 }
 

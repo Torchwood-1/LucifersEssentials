@@ -7,11 +7,22 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  back:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.back
+    description: allows a user to go back after they have died
+
+  respawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.respawn
+    description: this allows a player to respawn
+
   spawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     permission: luciferessentials.spawn
     description: send a player to spawn
-
   setspawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: sets the server spawn point
     permission: luciferessentials.setspawn
 
@@ -30,7 +41,7 @@ commands:
 
   rank:
     permission: luciferessentials.rank
-    permission-message:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: allows a staff member to set a players rank
 
   tpall:
@@ -139,7 +150,12 @@ commands:
 
 
 permissions:
-
+  luciferessentials.back:
+    default: true
+    description: this allows a user to go back to a previous location after death
+  luciferessentials.respawn:
+    default: true
+    description: this allows a player to respawn
 
   luciferessentials.spawn:
     default: true
@@ -228,8 +244,8 @@ permissions:
     description: "Allows you to use /tp"
 
   luciferessentials.echest:
-  default: true
-  description: "Allows you to use /echest"
+    default: true
+    description: "Allows you to use /echest"
 
   luciferessentials.echest.others:
     default: op

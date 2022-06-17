@@ -78,11 +78,16 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("glow").setExecutor(new CommandGlow());
 
         getCommand("setspawn").setExecutor(new CommandSetSpawn(this));
-
         getCommand("spawn").setExecutor(new CommandSpawn(this));
+        getServer().getPluginManager().registerEvents(new SpawnListeners(this), this);
+
+        getCommand("respawn").setExecutor(new CommandRespawn());
 
         Bukkit.getServer().getPluginManager().registerEvents(new EventJoin(this), this);
         Bukkit.getServer().getPluginManager().registerEvents(new EventPlayerChat(), this);
+
+        getServer().getPluginManager().registerEvents(new OnDeathEvent(this), this);
+        getCommand("back").setExecutor(new CommandBack(this));
 
         ItemManager.init();
 

@@ -31,18 +31,18 @@ public class CommandGamemode implements CommandExecutor {
                 player = (Player) sender;
             }
             else {
-                sender.sendMessage("§4You are not a player.\n §eSpecify a player to change their gamemode");
+                sender.sendMessage("§1[§4lucifers§1] §4You are not a player.\n §eSpecify a player to change their gamemode");
                 return false;
             }
         }
 
         if (gameMode == null){
-            sender.sendMessage("§4Invalid gamemode");
+            sender.sendMessage("§1[§4lucifers§1] §4Invalid gamemode");
             return false;
         }
 
         player.setGameMode(gameMode);
-        sender.sendMessage("§achanged gamemode of §6"+player.getName()+" §ato §6"+gameMode.name());
+        sender.sendMessage("§1[§4lucifers§1] §achanged gamemode of §6"+player.getName()+" §ato §6"+gameMode.name());
         return true;
     }
     private GameMode matchGameMode(String modeString){

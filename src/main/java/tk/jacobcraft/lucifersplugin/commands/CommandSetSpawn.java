@@ -35,7 +35,7 @@ public class CommandSetSpawn implements CommandExecutor {
             player.sendMessage("§1[§4lucifers§1] §2Spawn location set!");
 
         }else{
-            System.out.println("please connect to the server");
+            System.out.println("§1[§4lucifers§1] please connect to the server");
         }
 
         return true;

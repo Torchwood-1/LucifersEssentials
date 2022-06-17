@@ -16,7 +16,7 @@ public class CommandEchest implements CommandExecutor {
             player = sender.getServer().getPlayer(args[0]);
         } else {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("\u00a7cYou need to specify a player");
+                sender.sendMessage("§1[§4lucifers§1] \u00a7cYou need to specify a player");
                 return false;
             }
             player = (Player) sender;
@@ -27,7 +27,7 @@ public class CommandEchest implements CommandExecutor {
         try {
             inv = player.getEnderChest();
         } catch (NullPointerException err) {
-            sender.sendMessage("\u00a7cCouldn't find enderchest");
+            sender.sendMessage("§1[§4lucifers§1] \u00a7cCouldn't find enderchest");
             return true;
         }
 

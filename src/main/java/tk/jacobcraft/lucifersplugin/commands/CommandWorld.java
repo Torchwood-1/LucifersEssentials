@@ -15,7 +15,7 @@ public class CommandWorld implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§4You are not a player!");
+            sender.sendMessage("§1[§4lucifers§1] §4You are not a player!");
             return false;
         }
 
@@ -24,13 +24,13 @@ public class CommandWorld implements CommandExecutor, TabCompleter {
         Player player = (Player) sender;
         World world = server.getWorld(args[0]);
         if (world == null) {
-            sender.sendMessage("§4 " + args[0] + "is not a world");
+            sender.sendMessage("§1[§4lucifers§1] §4 " + args[0] + "is not a world");
             return false;
         }
 
 
         player.teleport(new Location(world, player.getLocation().getBlockX(), player.getLocation().getBlockY(), player.getLocation().getBlockZ()));
-        sender.sendMessage("§a You have changed World to " + world.getName());
+        sender.sendMessage("§1[§4lucifers§1] §a You have changed World to " + world.getName());
         return true;
     }
 

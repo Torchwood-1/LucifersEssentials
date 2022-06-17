@@ -19,7 +19,7 @@ public class CommandRank implements CommandExecutor {
                 int rankValue = PlayerHandler.getRankValue(rankName);
                 if (rankValue >= 0) {
                     if (PlayerHandler.setRank(target, rankValue)) {
-                        sender.sendMessage("§aSuccesssfully set " + target.getName() + "'s rank to " + rankName);
+                        sender.sendMessage("§1[§4lucifers§1] §aSuccesssfully set " + target.getName() + "'s rank to " + rankName);
                         target.sendMessage("§1[§4lucifers§1] §bYour rank has been changed to " + rankName);
                         PlayerHandler.refreshRanks();
                     }

@@ -17,7 +17,7 @@ public class CommandTime implements CommandExecutor, TabCompleter {
         int timeToSet;
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Only players can use this command");
+            sender.sendMessage("§1[§4lucifers§1] Only players can use this command");
             return false;
         }
 
@@ -27,12 +27,12 @@ public class CommandTime implements CommandExecutor, TabCompleter {
         timeToSet = matchTime(args.length > 0 ? args[0] : label);
 
         if (timeToSet < 0 || (!canSetTime)) {
-            sender.sendMessage(String.format("\u00a76The time is: \u00a7a%s", world.getTime()));
+            sender.sendMessage(String.format("§1[§4lucifers§1] \u00a76The time is: \u00a7a%s", world.getTime()));
             return true;
         }
 
         world.setTime(timeToSet);
-        sender.sendMessage(String.format("\u00a7aSet the time to \u00a7e%s", world.getTime()));
+        sender.sendMessage(String.format("§1[§4lucifers§1] \u00a7aSet the time to \u00a7e%s", world.getTime()));
 
         return true;
     }
@@ -58,7 +58,7 @@ public class CommandTime implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        if(sender.hasPermission("test.time.set")){
+        if(sender.hasPermission("luciferessentials.time.set")){
             if(args.length == 1){
                 return ImmutableList.of("day","night","noon","midnight");
             }

@@ -14,11 +14,11 @@ public class CommandHacks implements CommandExecutor, TabCompleter{
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage("§4You are not a player!");
+            sender.sendMessage("§1[§4lucifers§1] §4You are not a player!");
             return false;
         }
         Player player = ((Player) sender);
-        player.kickPlayer("§4Cheating is not allowed on this server!");
+        player.kickPlayer("§1[§4lucifers§1] §4Cheating is not allowed on this server!");
         return false;
     }
 

@@ -12,7 +12,7 @@ public class CommandHelloworld implements CommandExecutor {
             if(sender.hasPermission("luciferessentials.helloworld")){
                 sender.sendMessage("hello world!");
             }else{
-                sender.sendMessage("§4you are not authorised, get recked!");
+                sender.sendMessage("§1[§4lucifers§1] §4you are not authorised, get recked!");
                 return false;
             }
             return true;

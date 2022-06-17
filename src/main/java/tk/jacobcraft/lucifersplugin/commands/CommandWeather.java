@@ -17,7 +17,7 @@ public class CommandWeather implements CommandExecutor, TabCompleter {
         Boolean weatherToSet = null;
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("\u00a7cOnly players can use this command!");
+            sender.sendMessage("§1[§4lucifers§1] \u00a7cOnly players can use this command!");
             return false;
         }
 
@@ -27,13 +27,13 @@ public class CommandWeather implements CommandExecutor, TabCompleter {
         weatherToSet = matchWeather(args.length < 1 ? label : args[0]);
 
         if (weatherToSet == null || (!canSetWeather)) {
-            sender.sendMessage(String.format("\u00a76It is currently \u00a7e%s", world.hasStorm() ? "raining" : "sunny"));
+            sender.sendMessage(String.format("§1[§4lucifers§1] \u00a76It is currently \u00a7e%s", world.hasStorm() ? "raining" : "sunny"));
             return true;
         }
 
         world.setStorm(weatherToSet);
 
-        sender.sendMessage(String.format("\u00a76Set the weather to \u00a7e" + (world.hasStorm() ? "rain" : "sun")));
+        sender.sendMessage(String.format("§1[§4lucifers§1] \u00a76Set the weather to \u00a7e" + (world.hasStorm() ? "rain" : "sun")));
         return true;
     }
 
@@ -55,7 +55,7 @@ public class CommandWeather implements CommandExecutor, TabCompleter {
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        if (sender.hasPermission("test.weather.set")) {
+        if (sender.hasPermission("luciferessentials.weather.set")) {
             if (args.length == 1) {
                 return ImmutableList.of("clear", "sun", "not_raining", "rain", "storm", "snow");
             }

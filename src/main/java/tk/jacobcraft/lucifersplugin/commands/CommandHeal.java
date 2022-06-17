@@ -13,18 +13,18 @@ public class CommandHeal implements CommandExecutor {
             target = sender.getServer().getPlayer(args[0]);
         } else {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("§aProvide a Player");
+                sender.sendMessage("§1[§4lucifers§1] §aProvide a Player");
                 return false;
             }
             target = (Player) sender;
         }
 
         if (target == null) {
-            sender.sendMessage("§4Player not found");
+            sender.sendMessage("§1[§4lucifers§1] §4Player not found");
             return false;
         }
         target.setHealth(20);
-        sender.sendMessage("§aYou have been healed successfully!");
+        sender.sendMessage("§1[§4lucifers§1] §aYou have been healed successfully!");
         return false;
     }
 }
