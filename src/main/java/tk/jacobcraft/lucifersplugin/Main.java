@@ -1,12 +1,12 @@
 package tk.jacobcraft.lucifersplugin;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.Listener;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.jacobcraft.lucifersplugin.events.*;
 import tk.jacobcraft.lucifersplugin.items.ItemManager;
-
 
 
 public class Main extends JavaPlugin implements Listener {
@@ -89,10 +89,22 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new OnDeathEvent(this), this);
         getCommand("back").setExecutor(new CommandBack(this));
 
+
+
         ItemManager.init();
+
+        new ColoredSignsEvent(this);
+
 
 
 
     }
 
+
+
+    public String prefix = "§1[§4lucifers§1] §b";
 }
+
+
+
+
