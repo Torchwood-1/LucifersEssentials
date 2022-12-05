@@ -10,6 +10,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import static net.md_5.bungee.api.ChatColor.translateAlternateColorCodes;
 import static org.bukkit.Bukkit.getLogger;
 
 public class CommandRules
@@ -36,7 +37,7 @@ public class CommandRules
             Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                sender.sendMessage(line);
+                sender.sendMessage(translateAlternateColorCodes('&',line));
             }
             scanner.close();
         } catch (FileNotFoundException e) {
