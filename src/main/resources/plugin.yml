@@ -7,7 +7,10 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
-
+  rules:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.rules
+    description: when used lists the rules of a server
   back:
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
     permission: luciferessentials.back

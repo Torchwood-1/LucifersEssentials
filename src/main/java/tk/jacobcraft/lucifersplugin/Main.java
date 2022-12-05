@@ -18,6 +18,8 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
+
+
         //config.yml
         getConfig().options().copyDefaults();
         saveDefaultConfig();
@@ -88,6 +90,8 @@ public class Main extends JavaPlugin implements Listener {
 
         getServer().getPluginManager().registerEvents(new OnDeathEvent(this), this);
         getCommand("back").setExecutor(new CommandBack(this));
+
+        getCommand("rules").setExecutor(new CommandRules(this));
 
 
 
