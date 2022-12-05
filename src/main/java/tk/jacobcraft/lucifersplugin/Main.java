@@ -92,7 +92,7 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("back").setExecutor(new CommandBack(this));
 
         getCommand("rules").setExecutor(new CommandRules(this));
-
+        getCommand("Broadcast").setExecutor(new CommandBroadcast());
 
 
         ItemManager.init();

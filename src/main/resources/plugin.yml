@@ -7,6 +7,11 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  broadcast:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.broadcast
+    description: when used it broadcasts a message to the server
+
   rules:
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
     permission: luciferessentials.rules
@@ -154,9 +159,13 @@ commands:
 
 
 permissions:
+  luciferessentials.broadcast:
+    default: op
+    description: allows a staff member to broadcast a message
+
   luciferessentials.rules:
     default: true
-    description: allows a user to go back after they have died
+    description: allows a to list the rules
 
   luciferessentials.back:
     default: true
