@@ -1,59 +1,62 @@
-//package tk.jacobcraft.lucifersplugin.commands;
-//
-//import org.bukkit.Bukkit;
-//import org.bukkit.ChatColor;
-//import org.bukkit.OfflinePlayer;
-//import org.bukkit.command.Command;
-//import org.bukkit.command.CommandSender;
-//import org.bukkit.entity.Player;
-//import org.bukkit.plugin.java.JavaPlugin;
-//
-//import java.util.HashMap;
-//
-//public class CommandWarn extends JavaPlugin {
-//
-//    private HashMap <Player, Integer> banned = new HashMap<Player, Integer>();
-//
-//    @Override
-//    public boolean onCommand(CommandSender sender, Command cmd, String commandlabel, String[] args) {
-//        if (cmd.getName().equalsIgnoreCase("warn")){
-//
-//            if (args.length < 2){
-//                sender.sendMessage(ChatColor.RED + "/warn <player reason>");
-//                return true;
-//            }
-//
-//            Player target = Bukkit.getServer().getPlayer(args[0]);
-//
-//            if(target == null){
-//                sender.sendMessage(ChatColor.RED + "Could not find player " + args[0]);
-//                return true;
-//            }
-//
-//            String msg = "";
-//            for (int i = 1; i < args.length; i++) {
-//                msg += args[i];
-//            }
-//
-//            Object level = this.getConfig().get(target.getName());
-//
-//            if (level == null) {
-//                target.sendMessage(ChatColor.RED + msg);
-//                return true;
-//            }
-//
-//            int l = Integer.parseInt(level.toString());
-//
-//            if (l == 1) {
-//                target.kickPlayer(ChatColor.RED + msg);
-//                return true;
-//            }
-//            if (l == 2){
-//                banned.put(target, 10);
-//                ((OfflinePlayer)target).setBanned(true);
-//                Bukkit.getServer().getScheduler().scheduleSyncDelayedTask()
-//                return true;
-//            }
-//        }
-//    }
-//}
+package tk.jacobcraft.lucifersplugin.commands;
+
+import java.util.HashMap;
+import java.util.UUID;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
+import tk.jacobcraft.lucifersplugin.utilities.WarnUtil;
+
+import static org.bukkit.Bukkit.getServer;
+
+public class CommandWarn implements CommandExecutor {
+
+    JavaPlugin plugin;
+
+    public CommandWarn(JavaPlugin plugin) {
+        super();
+        this.plugin = plugin;
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (args.length < 2) {
+            sender.sendMessage("Usage: /warn <player> <message>");
+            return false;
+        }
+
+        String playerName = args[0];
+        Player player = getServer().getPlayer(playerName);
+        if (player == null) {
+            sender.sendMessage("Player not found: " + playerName);
+            return false;
+        }
+
+        String message = String.join(" ", args[1]);
+        player.sendMessage("[Warning] " + message);
+
+//        UUID playerId = player.getUniqueId();
+        long expiration = System.currentTimeMillis() + 300000; // Warning expires in 5 minutes
+        WarnUtil.addWarning(player, expiration, plugin);
+
+        Scoreboard scoreboard = player.getScoreboard();
+        Objective objective = scoreboard.getObjective("warnings");
+        if (objective == null) {
+            objective = scoreboard.registerNewObjective("warnings", "dummy");
+            objective.setDisplayName("Warnings");
+        }
+
+        int numWarnings = WarnUtil.getWarnings(player).size();
+        objective.getScore(player.getName()).setScore(numWarnings);
+
+        WarnUtil.updatePlayerListName(player);
+
+        return true;
+    }
+}
+

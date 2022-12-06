@@ -7,6 +7,11 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  warn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.warn
+    description: when used it warns a player
+
   broadcast:
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
     permission: luciferessentials.broadcast
@@ -159,6 +164,10 @@ commands:
 
 
 permissions:
+  luciferessentials.warn:
+    default: op
+    description: allows a staff member to warn a player
+
   luciferessentials.broadcast:
     default: op
     description: allows a staff member to broadcast a message

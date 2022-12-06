@@ -92,7 +92,8 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("back").setExecutor(new CommandBack(this));
 
         getCommand("rules").setExecutor(new CommandRules(this));
-        getCommand("Broadcast").setExecutor(new CommandBroadcast());
+        getCommand("broadcast").setExecutor(new CommandBroadcast());
+        getCommand("warn").setExecutor(new CommandWarn(this));
 
 
         ItemManager.init();

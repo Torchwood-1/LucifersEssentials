@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import tk.jacobcraft.lucifersplugin.User;
+import tk.jacobcraft.lucifersplugin.utilities.WarnUtil;
 
 public class JoinLeaveListener implements Listener {
 
@@ -15,8 +17,6 @@ public class JoinLeaveListener implements Listener {
         Player player = e.getPlayer();
 
         e.setQuitMessage("§6Goodbye, §e§o§n" + player.getDisplayName() + " §6Hope you come again soon");
-
-
     }
 
     @EventHandler
