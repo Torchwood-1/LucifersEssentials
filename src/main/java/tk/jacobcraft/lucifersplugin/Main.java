@@ -95,7 +95,6 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("broadcast").setExecutor(new CommandBroadcast());
         getCommand("warn").setExecutor(new CommandWarn(this));
 
-
         ItemManager.init();
 
         new ColoredSignsEvent(this);
