@@ -18,13 +18,9 @@ public class Main extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-
-
         //config.yml
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-
-
 
         getServer().getPluginManager().registerEvents(new JoinLeaveListener(), this);
 
@@ -66,8 +62,8 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("hacks").setExecutor(commandHacks);
         this.getCommand("hacks").setTabCompleter(commandHacks);
 
-        CommandRank commandRank = new CommandRank();
-        this.getCommand("rank").setExecutor(commandRank);
+//        CommandRank commandRank = new CommandRank();
+//        this.getCommand("rank").setExecutor(commandRank);
 
         CommandHeal commandHeal = new CommandHeal();
         this.getCommand("heal").setExecutor(new CommandHeal());

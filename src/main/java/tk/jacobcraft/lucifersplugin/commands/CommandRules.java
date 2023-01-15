@@ -2,7 +2,7 @@ package tk.jacobcraft.lucifersplugin.commands;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
+
 import java.util.Scanner;
 
 import org.bukkit.command.Command;
@@ -11,7 +11,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import static net.md_5.bungee.api.ChatColor.translateAlternateColorCodes;
-import static org.bukkit.Bukkit.getLogger;
 
 public class CommandRules
         implements CommandExecutor {
