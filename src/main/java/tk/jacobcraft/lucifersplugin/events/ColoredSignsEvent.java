@@ -15,7 +15,7 @@ public class ColoredSignsEvent implements Listener {
 
     @EventHandler
     public void onSignChange(SignChangeEvent e) {
-        if(e.getPlayer().hasPermission("ep.signcolor")){
+        if(e.getPlayer().hasPermission("lucifers.signcolor")){
             String[] lines = e.getLines();
             for(int i = 0; i < 4; i++) {
                 String line = lines[ i ];
