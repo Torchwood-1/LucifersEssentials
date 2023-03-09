@@ -1,0 +1,333 @@
+name: LucifersEssentials
+version: 1.0
+main: tk.jacobcraft.lucifersplugin.Main
+api-version: 1.16
+authors: [ Torchwood1#4320, SamTiz#0913 ]
+description: a simple helloworld plugin!
+website: com.midlandwebmasters.jacobempire.HelloWorld
+
+commands:
+  warn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.warn
+    description: when used it warns a player
+
+  broadcast:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.broadcast
+    description: when used it broadcasts a message to the server
+
+  rules:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.rules
+    description: when used lists the rules of a server
+  back:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.back
+    description: allows a user to go back after they have died
+
+  respawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.respawn
+    description: this allows a player to respawn
+
+  spawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.spawn
+    description: send a player to spawn
+  setspawn:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: sets the server spawn point
+    permission: luciferessentials.setspawn
+
+  glow:
+    permission: luciferessentials.glow
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows player's to glow
+
+  skull:
+    permission: luciferessentials.skull
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows you to get a player's head
+
+  color:
+    description: color!
+
+  rank:
+    permission: luciferessentials.rank
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows a staff member to set a players rank
+
+  tpall:
+    permission: luciferessentials.tpall
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: Teleports all the players to your location
+
+  tp:
+    permission: luciferessentials.tp
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: Telleports players
+
+  gamemode:
+    permission: luciferessentials.gamemode
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: changes your gamemode
+    aliases: [gms, gmc, gmsp, creative, gm, survival, spectator, 1, 3,0]
+
+  vanish:
+    permission: luciferessentials.vanish
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: vanishes you from the world
+    aliases: [v]
+
+  heal:
+    permission: luciferessentials.heal
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: Heals people with permission
+
+  feed:
+    permission: luciferessentials.feed
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    aliases: [hunger,unstarve,feed]
+    description: it feeds you, pretty simple really!
+
+  stick:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    aliases: [stickoftruth,painstick,lucifersfury]
+    description: this is an epic weapon for Lucifer
+
+  fly:
+    permission: luciferessentials.fly
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    aliases: [soar,fallwithstyle,levitate,hover]
+    description: this allows you to fly, pretty simple really
+
+  helloworld:
+    permission: luciferessentials.helloworld
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    aliases: [hi,hello]
+    description: This is the hello command!
+
+  time:
+    aliases:
+      - day
+      - night
+      - noon
+      - midnight
+    usage: "/<command> [day|night|noon|midnight|ticks]"
+    permission: luciferessentials.time
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows you to change the time
+
+  weather:
+    aliases:
+      - sun
+      - rain
+      - snow
+    usage: "/<command> [rain|sun]"
+    permission: luciferessentials.weather
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows you to change the weather
+
+  echest:
+    aliases:
+      - endersee
+      - ec
+      - envsee
+      - endermanbox
+      - enderchest
+    permission: luciferessentials.echest
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    usage: "/<command> [player]"
+    description: allows you to look in enderchests
+
+  invsee:
+    aliases:
+      - openinv
+      - seeinv
+      - armorsee
+    permission: luciferessentials.invsee
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    usage: "/<command> [player]"
+    description: allows you to look in people's inventoryies
+
+  world:
+    permission: luciferessentials.world
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: allows you to change world!
+
+  hacks:
+    permission: luciferessentials.hacks
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: built in hacks for players to use :)
+
+
+
+permissions:
+  luciferessentials.warn:
+    default: op
+    description: allows a staff member to warn a player
+
+  luciferessentials.broadcast:
+    default: op
+    description: allows a staff member to broadcast a message
+
+  luciferessentials.rules:
+    default: true
+    description: allows a to list the rules
+
+  luciferessentials.back:
+    default: true
+    description: this allows a user to go back to a previous location after death
+  luciferessentials.respawn:
+    default: true
+    description: this allows a player to respawn
+
+  luciferessentials.spawn:
+    default: true
+    description: this allows a player to go to spawn
+  luciferessentials.setspawn:
+    default: op
+    description: this allows a admin to set spawn
+
+  luciferessentials.glow:
+    default: op
+    description: this allows the player to glow
+
+  luciferessentials.skull:
+    default: op
+    description: this allows players to get player heads
+
+  luciferessentials.coloredchat:
+    default: op
+    description: this allows players to speak with coloured chat
+
+  luciferessentials.rank.override:
+    default: op
+    description: this command node allows the authorised people to change anyone's rank
+
+  luciferessentials.rank:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /rank
+
+  luciferessentials.gamemode:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /gamemode or aliases
+
+  luciferessentials.vanish:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /vanish or aliases
+  luciferessentials.vanish.others:
+    default: op
+    description: a simple command node to allow the authorised people to use the epic command /vanish or aliases on others
+  luciferessentials.vanish.*:
+    children:
+      test.vanish: true
+      test.vanish.others: true
+    description: a simple command node to allow authorised peoople to use the epic command /vanish or aliases to it's full extent
+    default: op
+
+  luciferessentials.heal:
+    default: op
+    description: a simple command node to allow authorised people to use the epic command /heal
+
+  luciferessentials.feed:
+    default: op
+    description: a simple command node to allow authorised people to use the epic command /feed or aliases
+
+  luciferessentials.fly:
+    default: op
+    description: a simple command node to allow autorised people to use the epic command /fly or aliases
+
+  luciferessentials.helloworld:
+    default: op
+    description: a simple command node to allow people to use the epic command /helloworld or aliases
+
+  luciferessentials.time:
+    default: true
+    description: "Allows you to use /time"
+
+  luciferessentials.time.set:
+    default: false
+    description: "Allows you to use /time set"
+    children: [ test.time ]
+
+  luciferessentials.weather:
+    default: true
+    description: "Allows you to use /weather"
+
+  luciferessentials.weather.set:
+    default: op
+    description: "Allows you to use /weather set"
+    children: [ luciferessentials.weather ]
+
+  luciferessentials.tpall:
+    default: op
+    description: "Allows you to use /tp all players"
+
+  luciferessentials.tp:
+    default: op
+    description: "Allows you to use /tp"
+
+  luciferessentials.echest:
+    default: true
+    description: "Allows you to use /echest"
+
+  luciferessentials.echest.others:
+    default: op
+    description: "Allows you to see other people's enderchests"
+
+  luciferessentials.echest.*:
+    children:
+      - luciferessentials.echest
+      - luciferessentials.echest.others
+
+  luciferessentials.invsee:
+    default: op
+    description: "Allows you to use /invsee"
+
+  luciferessentials.invsee.others:
+    default: op
+    description: "Allows you to see other people's inventories"
+
+  luciferessentials.invsee.armor:
+    default: op
+    description: "Allows you to use /armorsee"
+
+  luciferessentials.invsee.*:
+    description: allows you to look in other people's inventoryies
+    children:
+    - luciferessentials.invsee
+    - luciferessentials.invsee.others
+    - luciferessentials.invsee.armor
+
+  luciferessentials.world:
+    default: op
+    description: "Allows you to use /world"
+
+  test.hacks:
+    default: op
+    description: "Allows you to use /hacks"
+
+  luciferessentials.*:
+    default: op
+    children:
+      luciferessentials.gamemode: true
+      luciferessentials.spawn: true
+      luciferessentials.setspawn: true
+      luciferessentials.rank.override: true
+      luciferessentials.rank: true
+      luciferessentials.tp: true
+      luciferessentials.tpall: true
+      luciferessentials.vanish.*: true
+      luciferessentials.fly: true
+      luciferessentials.helloworld: true
+      luciferessentials.feed: true
+      luciferessentials.heal: true
+      luciferessentials.weather.set: true
+      luciferessentials.time.set: true
+      luciferessentials.invsee.*: true
+      luciferessentials.echest.*: true
+      luciferessentials.hacks: true
+      luciferessentials.coloredchat: true
+    description: this allows a person to use all commands
