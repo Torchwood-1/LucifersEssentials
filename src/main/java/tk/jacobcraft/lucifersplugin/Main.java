@@ -1,8 +1,13 @@
 package tk.jacobcraft.lucifersplugin;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.scoreboard.*;
 import tk.jacobcraft.lucifersplugin.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 import tk.jacobcraft.lucifersplugin.events.*;
@@ -77,6 +82,7 @@ public class Main extends JavaPlugin implements Listener {
 
         getCommand("setspawn").setExecutor(new CommandSetSpawn(this));
         getCommand("spawn").setExecutor(new CommandSpawn(this));
+
         getServer().getPluginManager().registerEvents(new SpawnListeners(this), this);
 
         getCommand("respawn").setExecutor(new CommandRespawn());
@@ -91,16 +97,35 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("broadcast").setExecutor(new CommandBroadcast());
         getCommand("warn").setExecutor(new CommandWarn(this));
 
+        getCommand("set-displayname").setExecutor(new CommandSetDisplayName());
+
+
         ItemManager.init();
 
         new ColoredSignsEvent(this);
 
-
-
-
+//        getServer().getPluginManager().registerEvents(new PlayerTickListener(), this);
     }
 
-
+//    public class PlayerTickListener implements Listener {
+//
+//        @EventHandler
+//        public void onPlayerTick(PlayerMoveEvent event) {
+//            Player player = event.getPlayer();
+//            Location loc = player.getLocation();
+//
+//            String subtitleText = formatCoordinates(loc);
+//            player.sendTitle("", subtitleText, 0, 10, 0);
+//
+//        }
+//
+//        public String formatCoordinates(Location loc) {
+//            int x = loc.getBlockX();
+//            int y = loc.getBlockY();
+//            int z = loc.getBlockZ();
+//            return ChatColor.GREEN + "X: " + x + " Y: " + y + " Z: " + z;
+//        }
+//    }
 
     public String prefix = "§1[§4lucifers§1] §b";
 }

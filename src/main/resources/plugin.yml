@@ -7,6 +7,11 @@ description: a simple helloworld plugin!
 website: com.midlandwebmasters.jacobempire.HelloWorld
 
 commands:
+  set-displayname:
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    permission: luciferessentials.set-displayname
+    description: when used it warns a player
+
   warn:
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
     permission: luciferessentials.warn
@@ -164,6 +169,10 @@ commands:
 
 
 permissions:
+  luciferessentials.set-displayname:
+    default: op
+    description: Allows whoever has permission to set a custom name on an item
+
   luciferessentials.warn:
     default: op
     description: allows a staff member to warn a player
