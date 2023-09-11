@@ -166,9 +166,16 @@ commands:
     permission-message: §1[§4lucifers§1] §bYou do not have permission!
     description: built in hacks for players to use :)
 
-
+  swapinventory:
+    permission: luciferessentials.swapinventory
+    permission-message: §1[§4lucifers§1] §bYou do not have permission!
+    description: this allows staff to switch between inventories!
 
 permissions:
+  luciferessentials.swapinventory:
+    default: op
+    description: this allows staff to switch between inventorys!
+
   luciferessentials.set-displayname:
     default: op
     description: Allows whoever has permission to set a custom name on an item

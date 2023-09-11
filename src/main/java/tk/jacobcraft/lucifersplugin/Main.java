@@ -67,6 +67,10 @@ public class Main extends JavaPlugin implements Listener {
         this.getCommand("hacks").setExecutor(commandHacks);
         this.getCommand("hacks").setTabCompleter(commandHacks);
 
+        SwapInventoryCommand swapInventoryCommand = new SwapInventoryCommand(this);
+        this.getCommand("swapinventory").setExecutor(swapInventoryCommand);
+        this.getCommand("swapinventory").setTabCompleter(swapInventoryCommand);
+
 //        CommandRank commandRank = new CommandRank();
 //        this.getCommand("rank").setExecutor(commandRank);
 
@@ -98,6 +102,7 @@ public class Main extends JavaPlugin implements Listener {
         getCommand("warn").setExecutor(new CommandWarn(this));
 
         getCommand("set-displayname").setExecutor(new CommandSetDisplayName());
+
 
 
         ItemManager.init();
